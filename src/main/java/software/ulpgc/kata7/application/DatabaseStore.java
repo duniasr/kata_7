@@ -1,7 +1,7 @@
-package software.ulpgc.kata6.application;
+package software.ulpgc.kata7.application;
 
-import software.ulpgc.kata6.architecture.io.Store;
-import software.ulpgc.kata6.architecture.model.Movie;
+import software.ulpgc.kata7.architecture.io.Store;
+import software.ulpgc.kata7.architecture.model.Movie;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

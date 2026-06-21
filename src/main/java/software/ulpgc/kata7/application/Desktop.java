@@ -1,4 +1,4 @@
-package software.ulpgc.kata6.application;
+package software.ulpgc.kata7.application;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -6,10 +6,10 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.IntervalXYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import software.ulpgc.kata6.architecture.io.Store;
-import software.ulpgc.kata6.architecture.model.Movie;
-import software.ulpgc.kata6.architecture.viewmodel.Histogram;
-import software.ulpgc.kata6.architecture.viewmodel.HistogramBuilder;
+import software.ulpgc.kata7.architecture.io.Store;
+import software.ulpgc.kata7.architecture.model.Movie;
+import software.ulpgc.kata7.architecture.viewmodel.Histogram;
+import software.ulpgc.kata7.architecture.viewmodel.HistogramBuilder;
 
 import javax.swing.*;
 import java.awt.*;

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>kata6</artifactId>
+    <artifactId>kata7</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -42,4 +42,61 @@
             <version>2.10.1</version>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>software.ulpgc.kata7.application.mainBaseDatos.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>jpackage</executable>
+                    <arguments>
+                        <argument>--name</argument>
+                        <argument>${project.artifactId}</argument>
+
+                        <argument>--input</argument>
+                        <argument>target/</argument>
+                        <argument>--main-jar</argument>
+                        <argument>${project.artifactId}.jar</argument>
+                        <argument>--main-class</argument>
+                        <argument>software.ulpgc.kata7.application.mainBaseDatos.Main</argument>
+                        <argument>--win-dir-chooser</argument>
+                        <argument>--win-console</argument>
+                        <argument>--win-shortcut</argument>
+                        <argument>--icon</argument>
+                        <argument>cinema.ico</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

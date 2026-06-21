@@ -1,14 +1,13 @@
-package software.ulpgc.kata6.application;
+package software.ulpgc.kata7.application;
 
 import com.google.gson.Gson;
-import software.ulpgc.kata6.architecture.viewmodel.Histogram;
-import software.ulpgc.kata6.architecture.viewmodel.HistogramBuilder;
+import software.ulpgc.kata7.architecture.viewmodel.Histogram;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class HistogramAdapter {
-    private static String toJason(Histogram histogram){
+    public static String toJson(Histogram histogram){
         Map<String, Object> response = new HashMap<>();
         response.put("title", histogram.title());
         response.put("x_axis", histogram.x());

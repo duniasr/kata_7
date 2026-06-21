@@ -1,22 +1,21 @@
-package software.ulpgc.kata6.application;
+package software.ulpgc.kata7.application;
 
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import software.ulpgc.kata6.architecture.io.Store;
-import software.ulpgc.kata6.architecture.model.Movie;
-import software.ulpgc.kata6.architecture.viewmodel.Histogram;
-import software.ulpgc.kata6.architecture.viewmodel.HistogramBuilder;
+import software.ulpgc.kata7.architecture.io.Store;
+import software.ulpgc.kata7.architecture.model.Movie;
+import software.ulpgc.kata7.architecture.viewmodel.Histogram;
+import software.ulpgc.kata7.architecture.viewmodel.HistogramBuilder;
 
-import java.util.Locale;
 import java.util.function.Function;
 
 public class WebService {
     private final Store store;
     private final Javalin app;
 
-    public WebService(Store store, Javalin app) {
+    public WebService(Store store) {
         this.store = store;
-        this.app = app;
+        this.app = Javalin.create();
         this.app.get("/histogram", this::histogram);
     }
 
